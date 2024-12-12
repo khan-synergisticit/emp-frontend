@@ -10,7 +10,7 @@
 /node_modules
 npm-debug.log
 yarn-error.log
-
+deploy-frontend.sh
 # IDEs and editors
 .idea/
 .project
