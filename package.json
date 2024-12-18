@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0",
-    "build": "ng build --base-href http://192.168.62.11:8080",
+    "build": "ng build --base-href http://192.9.243.156:8080",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
