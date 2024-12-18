@@ -8,7 +8,7 @@ pipeline {
                     
                  withCredentials([sshUserPrivateKey(credentialsId: 'oci-frontend', keyFileVariable: 'file')]) {
                     sh '''
-                        ssh -i "$file" opc@192.9.243.156
+                        ssh  opc@192.9.243.156
                         cd angular/emp-frontend && ./deploy-frontend.sh
                     '''
                     // def remote = [:];
