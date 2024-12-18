@@ -6,10 +6,10 @@ pipeline {
             steps{
                 script{
                     def remote = [:];
-                remote.name = '192.168.62.11';
-                remote.host = '192.168.62.11';
-                remote.user = 'donkey';
-                remote.password = 'donkey';
+                remote.name = env.DEVOPS_IP;
+                remote.host = env.DEVOPS_IP;
+                remote.user = env.REMOTE_USER;
+                remote.password = env.REMOTE_PASSWORD;
                 remote.allowAnyHosts = true;
 
                 sshCommand remote: remote, command: "cd angular && ./deploy-frontend.sh"

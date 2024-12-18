@@ -8,9 +8,10 @@ import { Employee } from './employee';
 })
 export class EmployeeService {
 
-  private baseUrl = "http://192.168.62.11:8020/api/v1/employees";
-  constructor(private httpclient: HttpClient) { }
+  private baseUrl = "http://192.168.61.11:8020/api/v1/employees";
+  private header = new HttpHeaders().set("Access-Control-Allow-Origin", "*");
 
+  constructor(private httpclient: HttpClient) { }
   getEmployeesList(): Observable<Employee[]>{
     return this.httpclient.get<Employee[]>(`${this.baseUrl}`);
   }
