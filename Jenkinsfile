@@ -13,7 +13,7 @@ pipeline {
                     remote.user = "opc";
                     // remote.password = env.REMOTE_PASSWORD;
                     remote.allowAnyHosts = true;
-                    sshCommand remote: remote, command: "cd angular && ./deploy-frontend.sh"
+                    sshCommand remote: remote, command: "cd angular/emp-frontend && ./deploy-frontend.sh"
 
                  }
                 //sshCommand remote: remote, command: "ls"
