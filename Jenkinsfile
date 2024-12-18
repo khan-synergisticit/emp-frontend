@@ -11,7 +11,7 @@ pipeline {
                 // remote.user = env.REMOTE_USER;
                 // remote.password = env.REMOTE_PASSWORD;
                 remote.allowAnyHosts = true;
-                 withCredentials([sshUserPrivateKey(credentialsId: 'oci-frontend' usernameVariable: env.REMOTE_USER)]) {
+                 withCredentials([sshUserPrivateKey(credentialsId: 'oci-frontend')]) {
                    sshCommand remote: remote, command: "cd angular && ./deploy-frontend.sh"
 
                  }
