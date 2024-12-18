@@ -8,11 +8,13 @@ pipeline {
                     def remote = [:];
                 remote.name = env.DEVOPS_IP;
                 remote.host = env.DEVOPS_IP;
-                remote.user = env.REMOTE_USER;
-                remote.password = env.REMOTE_PASSWORD;
+                // remote.user = env.REMOTE_USER;
+                // remote.password = env.REMOTE_PASSWORD;
                 remote.allowAnyHosts = true;
+                 withCredentials([sshUserPrivateKey(credentialsId: 'oci-frontend' usernameVariable: env.REMOTE_USER)]) {
+                   sshCommand remote: remote, command: "cd angular && ./deploy-frontend.sh"
 
-                sshCommand remote: remote, command: "cd angular && ./deploy-frontend.sh"
+                 }
                 //sshCommand remote: remote, command: "ls"
                 // sshCommand remote: remote, command: "mvn clean install"
                 }
