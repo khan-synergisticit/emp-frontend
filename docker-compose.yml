@@ -1,7 +1,7 @@
 services:
-  frontend:
+  emp-frontend:
     # image: khanster/frontend:latest
-    container_name: frontend
+    container_name: emp-frontend
     build:
       context: .
     ports:
