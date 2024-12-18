@@ -6,14 +6,14 @@ pipeline {
             steps{
                 script{
                     
-                 withCredentials([sshUserPrivateKey(credentialsId: 'oci-frontend')]) {
+                 withCredentials([sshUserPrivateKey(credentialsId: 'oci-frontend', usernameVariable: 'opc')]) {
                     def remote = [:];
                     remote.name = env.DEVOPS_IP;
                     remote.host = env.DEVOPS_IP;
-                    // remote.user = env.REMOTE_USER;
+                    remote.user = opc;
                     // remote.password = env.REMOTE_PASSWORD;
                     remote.allowAnyHosts = true;
-                   sshCommand remote: remote, command: "cd angular && ./deploy-frontend.sh"
+                    sshCommand remote: remote, command: "cd angular && ./deploy-frontend.sh"
 
                  }
                 //sshCommand remote: remote, command: "ls"
