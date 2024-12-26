@@ -4,10 +4,10 @@ pipeline {
         stage("SSH"){
             steps{
                 script{                    
-                    withCredentials([sshUserPrivateKey(credentialsId: 'oci-frontend', keyFileVariable: 'PK',  usernameVariable: 'userName')]) {
+                    withCredentials([sshUserPrivateKey(credentialsId: 'gcp-frontend', keyFileVariable: 'PK',  usernameVariable: 'userName')]) {
                         def remote = [:];
-                        remote.name = "192.9.243.156";
-                        remote.host = "192.9.243.156";
+                        remote.name = "34.67.84.34";
+                        remote.host = "34.67.84.34";
                         remote.user = userName;
                         remote.identityFile = PK;
                         remote.allowAnyHosts = true;
