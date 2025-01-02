@@ -23,6 +23,7 @@ pipeline {
                 kubernetes{
                     cloud "gcp-kube"
                 }
+            }
             steps{
                 script{
                     withCredentials([file(credentialsId: 'sa-key', variable: 'SERVICE_ACCOUNT_KEY')]) {
