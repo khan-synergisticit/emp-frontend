@@ -28,7 +28,7 @@ pipeline {
                 script{
                     withCredentials([file(credentialsId: 'sa-key', variable: 'SERVICE_ACCOUNT_KEY')]) {
                     sh 'gcloud auth activate-service-account --key-file=$SERVICE_ACCOUNT_KEY'
-                    sh "gcloud container clusters get-credentials ${env.CLUSTER_NAME} --zone ${env.CLUSTER_REGION} --project ${env.CLUSTER_PROJECT}"
+                    sh "gcloud container clusters get-credentials ${env.CLUSTER_NAME} --region ${env.CLUSTER_REGION} --project ${env.CLUSTER_PROJECT}"
                     sh 'kubectl set image deployments/emp-frontend emp-frontend=docker.io/khanster/emp-fronend:latest'
                     }
                 }
@@ -37,6 +37,8 @@ pipeline {
     }
         
 }
+//                    sh "gcloud container clusters get-credentials ${env.CLUSTER_NAME} --region ${env.CLUSTER_REGION} --project ${env.CLUSTER_PROJECT}"
+
     // post{
     //     always{
     //         cleanWs()
