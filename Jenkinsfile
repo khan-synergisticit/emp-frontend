@@ -7,8 +7,8 @@ pipeline {
                 script{                    
                     withCredentials([sshUserPrivateKey(credentialsId: 'emp-key', keyFileVariable: 'PK',  usernameVariable: 'userName')]) {
                         def remote = [:];
-                        remote.name = "34.67.84.34";
-                        remote.host = "34.67.84.34";
+                        remote.name = "34.171.212.75";
+                        remote.host = "34.171.212.75";
                         remote.user = userName;
                         remote.identityFile = PK;
                         remote.allowAnyHosts = true;
