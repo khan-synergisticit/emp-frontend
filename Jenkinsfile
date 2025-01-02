@@ -1,7 +1,6 @@
 pipeline {
     agent none
-    stages{
-        
+    stages{        
         stage("SSH"){
             agent any
             steps{
@@ -35,11 +34,12 @@ pipeline {
         //         }
         //     }
         // }
-        post{
-            always{
-                cleanWs()
-                deleteDir()
-            }
+        
+    }
+    post{
+        always{
+            cleanWs()
+            deleteDir()
         }
-   }
+    }
 }
