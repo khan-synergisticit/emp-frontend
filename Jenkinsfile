@@ -36,10 +36,10 @@ pipeline {
         // }
         
     }
-    post{
-        always{
-            cleanWs()
-            deleteDir()
-        }
-    }
+    // post{
+    //     always{
+    //         cleanWs()
+    //         deleteDir()
+    //     }
+    // }
 }
