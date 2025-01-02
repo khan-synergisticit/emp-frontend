@@ -8,7 +8,7 @@ import { Employee } from './employee';
 })
 export class EmployeeService {
 
-  private baseUrl = "http://10.96.0.13:8020/api/v1/employees";
+  private baseUrl = "http://35.224.105.92:8020/api/v1/employees";
   private header = new HttpHeaders().set("Access-Control-Allow-Origin", "*");
 
   constructor(private httpclient: HttpClient) { }
