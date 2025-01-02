@@ -22,11 +22,11 @@ pipeline {
             agent{
                 kubernetes{
                     cloud "gcp-kube"
-                    yamlFile "build-agent.yml"
+                    // yamlFile "build-agent.yml"
                 }
             }
             steps{
-                container("gcloud-builder"){
+                // container("gcloud-builder"){
                     script{
                     withCredentials([file(credentialsId: 'sa-key', variable: 'SERVICE_ACCOUNT_KEY')]) {
                     sh 'gcloud auth activate-service-account --key-file=$SERVICE_ACCOUNT_KEY'
@@ -34,7 +34,7 @@ pipeline {
                     sh 'kubectl describe deployments emp-fronend'
                     }
                 }
-                }
+                // }
             }
         }
     }
