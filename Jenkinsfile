@@ -35,12 +35,12 @@ pipeline {
         //     }
         // }
     }
-    post{
-        always{
-            cleanWs()
-            deleteDir()
-        }
-    }
+    // post{
+    //     always{
+    //         cleanWs()
+    //         deleteDir()
+    //     }
+    // }
         
 }
 //sh 'kubectl set image deployments/emp-frontend emp-frontend=docker.io/khanster/emp-fronend:latest'
